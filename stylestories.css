@@ -1,0 +1,164 @@
+/* --- CONTAINER UTAMA --- */
+.nike-stories-container {
+    padding-top: 140px;
+    padding-bottom: 100px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.stories-intro {
+    margin-bottom: 30px;
+}
+
+.nike-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- TOMBOL FILTER (NIKE PILL BUTTONS) --- */
+.filter-pill-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.pill-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #f5f5f5;
+    color: var(--black);
+    border-radius: 30px; /* Membuat bentuk kapsul murni */
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.pill-btn:hover {
+    background-color: #e5e5e5;
+}
+
+/* LOGIKA FILTER CSS MURNI (Efek tombol menyala hitam saat aktif) */
+#tab-all:checked ~ .filter-pill-group label[for="tab-all"],
+#tab-personal:checked ~ .filter-pill-group label[for="tab-personal"],
+#tab-film:checked ~ .filter-pill-group label[for="tab-film"],
+#tab-game:checked ~ .filter-pill-group label[for="tab-game"] {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* LOGIKA MENYEMBUNYIKAN KARTU SESUAI KATEGORI */
+#tab-personal:checked ~ .nike-grid .nike-card:not(.cat-personal),
+#tab-film:checked ~ .nike-grid .nike-card:not(.cat-film),
+#tab-game:checked ~ .nike-grid .nike-card:not(.cat-game) {
+    display: none;
+}
+
+/* --- NIKE GRID LAYOUT (3 KOLOM) --- */
+.nike-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* --- STRUKTUR KARTU --- */
+.nike-card {
+    position: relative;
+    aspect-ratio: 3 / 4; /* Rasio kotak tegak presisi mirip foto katalog Nike */
+    background-color: #eee;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Gambar latar belakang kartu */
+.card-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efek zoom gambar halus saat kartu diarahkan kursor */
+.nike-card:hover .card-bg {
+    transform: scale(1.04);
+}
+
+/* Lapisan hitam transparan agar tulisan putih selalu kontras dan terbaca */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%);
+}
+
+/* Pembungkus teks di dalam kartu (Menempel di kiri bawah) */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-tag {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+/* TOMBOL OVAL PUTIH (Adukan Gaya dari Tombol "Shop" Nike) */
+.nike-shop-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.nike-shop-btn:hover {
+    opacity: 0.85;
+}
+
+/* --- LAYOUT MOBILE RESPONSIVE --- */
+@media (max-width: 900px) {
+    .nike-grid {
+        grid-template-columns: repeat(2, 1fr); /* Layar tablet menjadi 2 kolom */
+    }
+}
+
+@media (max-width: 600px) {
+    .nike-grid {
+        grid-template-columns: 1fr; /* Layar HP menjadi 1 kolom penuh vertikal */
+    }
+    .nike-title {
+        font-size: 1.6rem;
+    }
+    .card-content {
+        padding: 20px;
+    }
+}
