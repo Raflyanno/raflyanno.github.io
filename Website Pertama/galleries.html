@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleries - Rafly's Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Panggil style utama & style khusus galleries -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylegalleries.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Rafly's Space</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="me.html">Me</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="galleries.html" class="active">Galleries</a></li>
+            <li><a href="film.html">Film</a></li>
+            <li><a href="game.html">Game</a></li>
+        </ul>
+    </nav>
+
+    <!-- Konten Utama Galeri -->
+    <main class="container nike-gallery-container">
+        
+        <div class="gallery-intro">
+            <h1 class="nike-title">VISUAL ARCHIVES</h1>
+            <p class="typing-text" data-words='["Capturing streets.", "Cinematic framing.", "Minimalist perspectives."]'>Stills from my lens.</p>
+        </div>
+
+        <!-- Trik Filter CSS Murni (Nike Pill Style) -->
+        <input type="radio" id="gallery-all" name="gallery-filter" checked hidden>
+        <input type="radio" id="gallery-street" name="gallery-filter" hidden>
+        <input type="radio" id="gallery-cinema" name="gallery-filter" hidden>
+        <input type="radio" id="gallery-minimal" name="gallery-filter" hidden>
+
+        <div class="filter-pill-group">
+            <label for="gallery-all" class="pill-btn">All Frame</label>
+            <label for="gallery-street" class="pill-btn">Me</label>
+            <label for="gallery-cinema" class="pill-btn">Friends</label>
+            <label for="gallery-minimal" class="pill-btn">Other</label>
+        </div>
+
+        <!-- ASYMMETRICAL BENTO GRID LAYOUT -->
+        <div class="bento-grid">
+            
+            <!-- FOTO 1: BESAR (Big Square) -->
+            <div class="gallery-item item-big cat-street">
+                <img src="Properti.jpeg" alt="Properti">
+                <div class="item-overlay">
+                    <span class="item-category">Property Kids</span>
+                    <h3 class="item-caption">After Pagelaran</h3>
+                </div>
+            </div>
+
+            <!-- FOTO 2: TINGGI (Vertical Wall) -->
+            <div class="gallery-item item-tall cat-cinema">
+                <img src="Uncut.jpeg" alt="Uncut">
+                <div class="item-overlay">
+                    <span class="item-category">Kipli at Unsoed</span>
+                    <h3 class="item-caption">Physical Registration</h3>
+                </div>
+            </div>
+
+            <!-- FOTO 3: KECIL STANDAR -->
+            <div class="gallery-item cat-minimal">
+                <img src="Potbar1.jpeg" alt="Potbar1">
+                <div class="item-overlay">
+                    <span class="item-category">R&K</span>
+                    <h3 class="item-caption">After Pagelaran</h3>
+                </div>
+            </div>
+
+            <!-- FOTO 4: LEBAR (Horizontal Landscape) -->
+            <div class="gallery-item item-wide cat-cinema">
+                <img src="Properti2.jpeg" alt="Properti2">
+                <div class="item-overlay">
+                    <span class="item-category">Property Kids</span>
+                    <h3 class="item-caption">Where it all began</h3>
+                </div>
+            </div>
+
+            <!-- FOTO 5: KECIL STANDAR -->
+            <div class="gallery-item cat-street">
+                <img src="Potbar2.jpeg" alt="Potbar2">
+                <div class="item-overlay">
+                    <span class="item-category">R&K</span>
+                    <h3 class="item-caption">Graduation</h3>
+                </div>
+            </div>
+
+            <!-- FOTO 6: TINGGI (Vertical Wall) -->
+            <div class="gallery-item item-tall cat-minimal">
+                <img src="Kipli.jpeg" alt="Kipli">
+                <div class="item-overlay">
+                    <span class="item-category">Kipli Cool</span>
+                    <h3 class="item-caption">After Pagelaran </h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL LIGHTBOX INTERAKTIF (Pop-up Foto Fullscreen Modern) -->
+    <div class="lightbox-modal" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Raflyanno Kautsar Wibowo. All rights reserved.</p>
+    </footer>
+
+    <!-- Hubungkan ke script global -->
+    <script src="script.js" defer></script>
+</body>
+</html>

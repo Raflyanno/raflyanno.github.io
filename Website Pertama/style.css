@@ -1,0 +1,320 @@
+/* --- CSS RESET & VARIABLES --- */
+:root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --gray: #888888;
+    --light-gray: #f5f5f5;
+    --border-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- TYPOGRAPHY UTILITIES --- */
+.text-gray { color: var(--gray); }
+.text-white { color: var(--white); }
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
+h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+
+.section {
+    padding: 100px 5%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-links a:hover {
+    color: var(--gray);
+}
+
+.hamburger { display: none; } /* Hanya untuk mobile nanti */
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    padding-top: 80px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+/* --- ABOUT SECTION --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+/* --- CONTACT SECTION --- */
+.bg-black {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-details {
+    margin-top: 40px;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Form Minimalis */
+.input-group {
+    margin-bottom: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    color: var(--white);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-bottom: 1px solid var(--white);
+}
+
+.btn-submit {
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    padding: 15px 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.8rem;
+    color: var(--gray);
+    background-color: var(--black);
+    border-top: 1px solid #1a1a1a;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Nav link disembunyikan di mobile untuk kesederhanaan saat ini */
+    
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* Kotak pembungkus dibuat bulat sempurna */
+.about-image {
+    width: 350px;              /* Tentukan lebar lingkaran */
+    height: 350px;             /* Tinggi HARUS SAMA dengan lebar agar bulat, bukan oval */
+    border-radius: 50%;        /* Mengubah kotak menjadi lingkaran murni */
+    overflow: hidden;          /* Memotong bagian gambar yang keluar dari lingkaran */
+    border: 4px solid var(--black); /* Bingkai hitam minimalis ala Nike */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Bayangan halus agar estetik */
+    margin: 0 auto;            /* Otomatis di tengah jika layar mengecil */
+}
+
+/* Pengaturan gambar di dalam lingkaran */
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Memastikan foto tidak gepeng dan terpotong rapi */
+    object-position: center;   /* Fokus foto tetap di tengah */
+    filter: grayscale(100%);   /* Efek hitam-putih estetik */
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Efek interaktif saat kursor menyentuh foto */
+.about-image:hover img {
+    filter: grayscale(0%);     /* Warna foto muncul kembali */
+    transform: scale(1.05);    /* Foto sedikit membesar (zoom-in halus) */
+}
+
+/* --- TOMBOL EKSPLORASI BARU (STYLE NIKE MINIMALIS) --- */
+.btn-explore {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Garis bawah untuk menu navbar yang sedang aktif */
+.nav-links a.active {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 4px;
+}
+
+/* Garis bawah khusus untuk LOGO di pojok kiri atas saat aktif */
+.logo a.active-logo {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 4px;
+    display: inline-block; /* Memastikan garis pas di bawah teks logo */
+}
+
+/* --- AMBIENCE & MICRO-INTERACTIONS --- */
+
+/* 1. Desain Bar Indikator Membaca (Muncul di paling atas layar saat scroll) */
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #111; /* Berwarna hitam pekat konsisten dengan tema minimalis */
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
+
+/* 2. Setup Efek Senter di Dalam Kartu Nike */
+.nike-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Membuat pendaran cahaya melingkar yang transparan mengikuti koordinat mouse */
+    background: radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(255, 255, 255, 0.18), transparent 40%);
+    z-index: 2;
+    pointer-events: none; /* Kursor tidak terhambat oleh lapisan efek */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Senter menyala hanya saat kartu disentuh kursor */
+.nike-card:hover::before {
+    opacity: 1;
+}
+
+/* 3. Animasi Kursor Berkedip ala Mesin Tik */
+.typing-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

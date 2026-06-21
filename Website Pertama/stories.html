@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories - Rafly's Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylestories.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Rafly's Space</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="me.html">Me</a></li>
+            <li><a href="stories.html" class="active">Stories</a></li>
+            <li><a href="galleries.html">Galleries</a></li>
+            <li><a href="film.html">Film</a></li>
+            <li><a href="game.html">Game</a></li>
+        </ul>
+    </nav>
+
+    <main class="container nike-stories-container">
+        
+        <div class="stories-intro">
+            <h1 class="nike-title">TRENDING STORIES</h1>
+        </div>
+
+        <input type="radio" id="tab-all" name="nike-filter" checked hidden>
+        <input type="radio" id="tab-personal" name="nike-filter" hidden>
+        <input type="radio" id="tab-film" name="nike-filter" hidden>
+        <input type="radio" id="tab-game" name="nike-filter" hidden>
+
+        <div class="filter-pill-group">
+            <label for="tab-all" class="pill-btn">All Stories</label>
+            <label for="tab-personal" class="pill-btn">Personal</label>
+            <label for="tab-film" class="pill-btn">Film Review</label>
+            <label for="tab-game" class="pill-btn">Game Review</label>
+        </div>
+
+        <div class="nike-grid" id="auto-reviews-container">
+
+    <article class="nike-card cat-personal">
+        <div class="card-bg" style="background-image: url('https://skuling.id/wp-content/uploads/2024/12/profil-universitas-jenderal-soedirman.png');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+            <p class="card-tag">Personal</p>
+            <h2 class="card-title">Kipli Menuju Unsoed</h2>
+            <a href="review-interstellar.html" class="nike-shop-btn">View Review</a>
+        </div>
+    </article>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Raflyanno Kautsar Wibowo. All rights reserved.</p>
+    </footer>
+<script src="script.js" defer></script>
+</body>
+</html>
